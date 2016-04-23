@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 
+const int NO_EDGE = -1;
+
 struct Map {
 private:
     Map(int verticesCount);
