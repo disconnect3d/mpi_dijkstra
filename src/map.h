@@ -7,6 +7,7 @@ struct Map {
 private:
     Map(int verticesCount);
 
+    std::vector<std::string> nodesNames;
     std::vector<std::vector<int>> weights;
 
 public:
@@ -15,6 +16,8 @@ public:
 
     decltype(weights.size()) getSize() const { return weights.size(); }
     const decltype(weights) getWeights() const { return weights; }
+
+    const decltype(nodesNames) getNodesNames() const { return nodesNames; }
 
     void printWeights() const;
 };

@@ -6,11 +6,11 @@
 
 CXX=g++
 CXXFLAGS=-std=c++14 -Wall -Wextra -static
-DBGFLAGS=-ggdb -DDEBUG
+DBGFLAGS=-ggdb -DDEBUG -DDEBUG_DIJKSTRA
 
-FILES=main.cpp map.cpp
+FILES=main.cpp map.cpp dijkstra.cpp
 
-all: main.cpp
+all: main.cpp map.cpp dijkstra.cpp
 	$(CXX) $(CXXFLAGS) $(FILES) -o main
 
 dbg: main.cpp

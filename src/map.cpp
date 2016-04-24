@@ -9,8 +9,9 @@
 #include "debug.h"
 
 Map::Map(int verticesCount) : weights(verticesCount) {
-    for(int i=0; i<verticesCount; ++i)
-        weights[i].reserve(verticesCount);
+    for(int i=0; i<verticesCount; ++i) {
+        weights[i].resize(verticesCount);
+    }
 }
 
 Map Map::fromFile(const std::string& str, const char delimiter) {
@@ -36,7 +37,7 @@ Map Map::fromFile(std::ifstream&& istream, const char delimiter) {
 
                 LOG(i);
                 LOG(j);
-                LOG(str);
+                LOG(numstr);
                 
                 // the `i` node has no edge to `j`
                 if (numstr.find("-") != std::string::npos)
@@ -45,6 +46,13 @@ Map Map::fromFile(std::ifstream&& istream, const char delimiter) {
                 else
                     m.weights[i][j] = std::stoi(numstr);
             }
+        }
+
+        for(auto i=0; i<verticesCount; ++i) {
+            char nodeName[2] = {0};
+            nodeName[0] = (char) ( (int)('A') + i );
+            std::cout << "Adding node: " << nodeName << std::endl;
+            m.nodesNames.push_back(std::string(nodeName));
         }
 
         return m;
