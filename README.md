@@ -1,13 +1,5 @@
 # MPI Dijkstra's graph search algorithm 
 
+Yet another dijkstra graph search algorithm implemented using MPI to distribute the work that can be parallelized...
 
-## Testcases
-
-The `testcases` directory contains tests that has to be created in specified format:
-
-```
-vertices: <number of vertices>
-<array of weights>
-```
-
-# Authors
+It has been written for parallel and distributed systems course on AGH University of Science and Technology.
