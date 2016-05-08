@@ -8,3 +8,6 @@ test0:
 
 test1:
 	mpiexec -n 3 ./main testcases/testcase1
+
+test3:
+	mpiexec -n 4 ./main testcases/testcase3
