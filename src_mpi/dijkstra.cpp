@@ -195,7 +195,7 @@ void dijkstraWorker(int mpiNodeId, int mpiNodesCount) {
                 if (totalCostToNode < distances[node]) {
                     distances[node] = totalCostToNode;
                     prevNodes[node] = currentNode;
-                    LOG("New total cost is less then the old, replacing");
+                    LOG("New total cost is less than the old, replacing");
                 }
             }
         }
