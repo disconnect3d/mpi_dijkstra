@@ -35,10 +35,6 @@ Map Map::fromFile(std::ifstream&& istream, const char delimiter) {
             for(auto j=0; j<verticesCount; ++j) {
                 std::string numstr;
                 std::getline(linestream, numstr, delimiter);
-
-                // LOG(i);
-                // LOG(j);
-                // LOG(numstr);
                 
                 // the `i` node has no edge to `j`
                 if (numstr.find("-") != std::string::npos)

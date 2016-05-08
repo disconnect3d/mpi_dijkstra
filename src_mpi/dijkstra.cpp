@@ -73,7 +73,6 @@ void dijkstra(const Map& m, const std::string& initialNodeName, const std::strin
         MPI_Bcast(&data, 2, MPI_INT, mpiRootId, MPI_COMM_WORLD);
 
         // receive distances calculated by workers
-
         for(auto mpiNodeId=1; mpiNodeId<mpiNodesCount; ++mpiNodeId) {
             const auto nodeRanges = getMpiWorkerNodeRanges(nodesCount, mpiNodesCount, mpiNodeId);
             const auto fromNode = nodeRanges.first;
@@ -82,6 +81,7 @@ void dijkstra(const Map& m, const std::string& initialNodeName, const std::strin
             std::cout << "Recv from " << mpiNodeId << std::endl;
         }
 
+        // test for goal
         if (currentNode == goalNode) {
             std::cout << "Goal node found" << std::endl;
             for(auto mpiNodeId=1; mpiNodeId<mpiNodesCount; ++mpiNodeId) {

@@ -35,13 +35,9 @@ int main(int argc, char* argv[]) {
 
         std::cout << "Searching..." << std::endl;
         dijkstra(m, initialNodeName, goalNodeName, mpiNodesCount);
-
-        // Send message to stop work
     }
-    else {
+    else
         dijkstraWorker(mpiNodeId, mpiNodesCount);
-        std::cout << "LEAVING" << std::endl;
-    }
 
     MPI_Finalize();
 
